@@ -1,9 +1,4 @@
-mod app;
-mod delivery;
-mod domain;
-mod infrastructure;
-mod usecase;
-
+use rust_clean_arcitecture::app;
 use dotenvy::dotenv;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 

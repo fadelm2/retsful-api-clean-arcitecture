@@ -1,3 +1,5 @@
+use crate::infrastructure::auth::jwt::JwtService;
+use crate::usecase::contact_usecase::ContactUsecase;
 use crate::usecase::user_usecase::{LoginRequest, RegisterRequest, UserUsecase};
 use axum::{
     extract::{State, Json},
@@ -8,6 +10,8 @@ use std::sync::Arc;
 
 pub struct AppState {
     pub user_usecase: Arc<UserUsecase>,
+    pub contact_usecase: Arc<ContactUsecase>,
+    pub jwt_service: Arc<JwtService>,
 }
 
 pub async fn register(
